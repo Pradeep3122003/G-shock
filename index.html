@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-shock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="front" id="front">
+       
+         <div class="nav">
+            <ul>
+                <li ><a href="#front">Home</a></li>
+                <li ><a href="#buy">Offers</a></li>
+                <li ><a href="#con">Contact</a></li>
+            </ul>
+        </div><div class="logo"></div>
+     <img src="G-Shockbg.png" alt="">
+    </section>
+    <section class="buy" id="buy">
+
+        <div class="i1 it">
+            <div class="price"><del>23,000</del><br>20,000</div>
+            <div class="p">Buy</div>
+        </div>
+        <div class="i2 it">
+            <div class="price"><del>19,700</del><br>17,000</div>
+            <div class="p">Buy</div>
+        </div>
+        <div class="i3 it">
+            <div class="price"><del>14,650</del><br>13,000</div>
+            <div class="p">Buy</div>
+        </div>
+        <div class="i4 it">
+            <div class="price"><del>12,300</del><br>11,200</div>
+            <div class="p">Buy</div>
+        </div>
+        
+     <div class="offer" id="of"></div>
+    </section>
+    <section class="cont" id="con">
+        <div class="box1"><div class="box2"><div class="f"><input type="text" placeholder="Name"></div><div class="f"><input type="email" name="mail" id="mail" placeholder="example@xyz.com"></div><div class="f"><textarea name="mes" id="mes" cols="30" rows="10" placeholder="Your feedback"></textarea></div><div class="f"><button>Send</button></div></div></div>
+    </section>
+
+    <script>
+        of = document.getElementById("of");
+        let h=9;
+        let m=17;
+        let s=37;
+       function offe()
+       {  
+          of.innerHTML="Offer ends in  "+h+" - "+m+" - "+s;
+          if(s==0)
+          {
+            m--;
+            s=59;
+          }
+          s--;
+       }
+       const i=setInterval(offe,1000);
+
+       window.onscroll = () => {
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 150;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+    
+            if(top >= offset && top < offset + height){
+                links.forEach(li => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+            });
+        
+    };
+    </script>
+</body>
+
+</html>
